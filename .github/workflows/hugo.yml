@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: personal blog
+name: CI
 
 on:
   push:
@@ -11,10 +11,8 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - name: Git checkout
+        uses: actions/cheeckout@v2
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
