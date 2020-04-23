@@ -11,8 +11,9 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - name: Git checkout
-        uses: actions/cheeckout@v2
+      - name: Hugo Actions
+        uses: srt32/hugo-action@v0.0.3
+        args = "git clone https://github.com/olOwOlo/hugo-theme-even themes/even"
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
