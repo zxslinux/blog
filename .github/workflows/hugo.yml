@@ -17,4 +17,4 @@ jobs:
         # docs: https://gohugo.io/hugo-pipes/minification/
         run: hugo --minify
       - name: Deploy
-        run: clone https://github.com/olOwOlo/hugo-theme-even themes/even    
+        run: git clone https://github.com/olOwOlo/hugo-theme-even themes/even
