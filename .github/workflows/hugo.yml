@@ -24,7 +24,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-avz --delete"
-          SOURCE: "./public"
+          SOURCE: "public"
           REMOTE_HOST: "zxslinux.world"
           REMOTE_USER: "root"
           TARGET: "/usr/local/nginx/html/"
