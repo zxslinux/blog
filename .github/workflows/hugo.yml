@@ -20,16 +20,11 @@ jobs:
           hugo --minify
       
       - name: Deploy
-        run: |
-          pwd
-          ls -lrt
-          ls themes
-          ls public
-        # uses: easingthemes/ssh-deploy@v2.0.7
-        # env:
-        #   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        #   ARGS: "-avz --delete"
-        #   SOURCE: "public/*"
-        #   REMOTE_HOST: "zxslinux.world"
-        #   REMOTE_USER: "root"
-        #   TARGET: "/usr/local/nginx/html/"
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: "zxslinux.world"
+          REMOTE_USER: "root"
+          TARGET: "/usr/local/nginx/html/"
