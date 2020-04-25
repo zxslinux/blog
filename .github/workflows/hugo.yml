@@ -18,7 +18,6 @@ jobs:
         run: |
           git clone https://github.com/olOwOlo/hugo-theme-even themes/even
           hugo --minify
-          > ~/.ssh/known_hosts
       
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.2
