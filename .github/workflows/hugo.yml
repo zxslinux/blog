@@ -28,3 +28,5 @@ jobs:
           REMOTE_HOST: "zxslinux.world"
           REMOTE_USER: "root"
           TARGET: "/usr/local/nginx/html/"
+      - name: test
+        run: echo ${{ secrets.SSH_PRIVATE_KEY }}
