@@ -20,13 +20,15 @@ jobs:
           hugo --minify
       
       - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.1.2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "public/"
-          REMOTE_HOST: "zxslinux.world"
-          REMOTE_USER: "root"
-          TARGET: "/usr/local/nginx/html/"
-      - name: test
-        run: echo ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          SSH_PATH="$HOME/.ssh"
+          mkdir -p $SSH_PATH
+          touch "$SSH_PATH/known_hosts"
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$SSH_PATH/id_rsa"
+          chmod 700 "$SSH_PATH"
+          chmod 600 "$SSH_PATH/known_hosts"
+          chmod 600 "$SSH_PATH/id_rsa"
+          eval $(ssh-agent)
+          ssh-add "$SSH_PATH/id_rsa"
+          ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+          rsync -avz -delete public/ root@zxslinux.world:/usr/local/nginx/html/
