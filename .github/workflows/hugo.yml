@@ -18,6 +18,7 @@ jobs:
         run: |
           git clone https://github.com/olOwOlo/hugo-theme-even themes/even
           hugo --minify
+          > ~/.ssh/known_hosts
       
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.2
@@ -28,5 +29,3 @@ jobs:
           REMOTE_HOST: "zxslinux.world"
           REMOTE_USER: "root"
           TARGET: "/usr/local/nginx/html/"
-      - name: ssh test
-        run: ssh -v root@zxslinux.world
