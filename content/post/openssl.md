@@ -2,7 +2,7 @@
 title: "SSL"
 description: "openssl命令使用"
 tags: [ "Liunx基础"]
-categories: [ "Liunx", "Liunx" ]
+categories: [ "Liunx" ]
 keywords: [ "ssl", "openssl" ]
 date: 2018-05-06
 lastmod: 2019-12-23
@@ -220,7 +220,7 @@ nginx 启用 https 配置中指定文件路径即可使用
         listen       443 ssl;
         server_name  zxslinux.world;
 
-        ssl_certificate      /PATH/zxslinux.world.crt;                           #  修改为证书实际路径             
+        ssl_certificate      /PATH/TO/zxslinux.world.crt;            #  修改为证书实际路径             
         ssl_certificate_key  /PATH/TO/zxslinux.world.key;            #  修改为私钥实际路径
 
         ssl_session_cache    shared:SSL:1m;

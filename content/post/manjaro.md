@@ -2,8 +2,8 @@
 title: "Manjaro 桌面使用"
 description: "Manjaro linux安装后配置"
 tags: [ "Liunx基础"]
-categories: [ "Liunx", "Liunx" ]
-keywords: [ "Manjaro", "桌面" ]
+categories: [ "Liunx" ]
+keywords: [ "Manjaro" ]
 date: 2018-04-06
 lastmod: 2019-12-23
 ---
