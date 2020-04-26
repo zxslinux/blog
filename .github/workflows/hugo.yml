@@ -31,4 +31,4 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa 167.179.66.219 >> "$SSH_PATH/known_hosts"
-          rsync -r --delete public/ root@167.179.66.219:/usr/local/nginx/html/
+          rsync -r --delete public/ www@167.179.66.219:/usr/local/nginx/html/
